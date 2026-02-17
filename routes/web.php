@@ -32,7 +32,7 @@ Route::get('/order/{orderNumber}', [CheckoutController::class, 'confirmation'])-
 // Admin
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-    Route::resource('products', ProductController::class);
+    Route::resource('products', ProductController::class)->except('show');
     Route::resource('orders', OrderController::class)->only(['index', 'show', 'update']);
 });
 

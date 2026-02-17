@@ -43,12 +43,12 @@ class Order extends Model
     public function getStatusColorAttribute(): string
     {
         return match($this->status) {
-            'pending' => 'yellow',
-            'processing' => 'blue',
-            'shipped' => 'indigo',
-            'delivered' => 'green',
-            'cancelled' => 'red',
-            default => 'gray',
+            'pending' => 'bg-yellow-50 text-yellow-700',
+            'processing' => 'bg-blue-50 text-blue-700',
+            'shipped' => 'bg-indigo-50 text-indigo-700',
+            'delivered' => 'bg-green-50 text-green-700',
+            'cancelled' => 'bg-red-50 text-red-700',
+            default => 'bg-stone-100 text-stone-600',
         };
     }
 }
